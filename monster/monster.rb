@@ -31,7 +31,7 @@ class Monster
 	def hide(&block)
 		actions[:hides] += 1
 		print "#{name} hides! "
-		yield
+		yield self if block_given?
 	end
 
 	def run(&block)
@@ -63,8 +63,9 @@ monster.scare do
 	puts "Boo!!! "
 end
 
-monster.hide do 
+monster.hide do |monster|
 	puts "I'm hiding!!! "
+	puts monster.actions.inspect
 end
 
 monster.run do 
