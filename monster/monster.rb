@@ -39,6 +39,16 @@ class Monster
 		print "#{name} runs! "
 		yield
 	end
+
+	def print_scoreboard
+		puts "-" * 10
+		puts "#{name}'s Scoreboard:"
+		puts "-" * 10
+		puts "Screams:  #{actions[:screams]}"
+		puts "Runs:  #{actions[:runs]}"
+		puts "Hides:  #{actions[:hides]}"
+		puts "Scares:  #{actions[:scares]}"
+	end
 end
 
 monster = Monster.new("Fluffy")
@@ -62,3 +72,5 @@ monster.run do
 end
 
 puts monster.actions
+puts "\n"
+puts monster.print_scoreboard
