@@ -4,7 +4,10 @@ class Monster
 	def initialize(name)
 		@name = name
 		@actions = {
-			screams: 0
+			screams: 0,
+			scares: 0,
+			runs: 0,
+			hides: 0
 		}
 	end
 
@@ -18,11 +21,44 @@ class Monster
 		print "#{name} screams!!! "
 		yield
 	end
+
+	def scare(&block)
+		actions[:scares] += 1
+		print "#{name} scares you! "
+		yield
+	end
+
+	def hide(&block)
+		actions[:hides] += 1
+		print "#{name} hides! "
+		yield
+	end
+
+	def run(&block)
+		actions[:runs] += 1
+		print "#{name} runs! "
+		yield
+	end
 end
 
 monster = Monster.new("Fluffy")
 monster.speak { puts "Hi."}
+puts monster.actions
+
 monster.scream do
-	puts "BOO!!! "
+	puts "Gah!!! "
 end
+
+monster.scare do 
+	puts "Boo!!! "
+end
+
+monster.hide do 
+	puts "I'm hiding!!! "
+end
+
+monster.run do 
+	puts "I'm coming after you!!! "
+end
+
 puts monster.actions
