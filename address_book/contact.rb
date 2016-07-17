@@ -1,11 +1,13 @@
 require_relative "phone_number"
+require_relative "address"
 
 class Contact
 	attr_writer :first_name, :middle_name, :last_name
-	attr_reader :phone_numbers
+	attr_reader :phone_numbers, :addresses
 
 	def initialize
 		@phone_numbers = []
+		@addresses = []
 	end
 
 	def add_phone_number(kind, number)
