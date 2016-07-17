@@ -1,16 +1,21 @@
 class Address
-	attr_accessor :kind, :street_1, :street_2, :city, :state, :postal_code
+	attr_accessor :kind, :street_1, :street_2, :city, :state, :zip_code
 
 	def to_s(format = "short")
 		address = ""
 		case format
+		when "long"
+			address += "#{kind}: \n"
+			address += street_1 + "\n"
+			address += street_2 + "\n" if !street_2.nil?
+			address += "#{city}, #{state} #{zip_code}"
 		when "short"
 			address += "#{kind}: "
 			address += street_1
 			if street_2
 				address += " " + street_2
 			end
-			address += ", #{city}, #{state}, #{postal_code}"
+			address += ", #{city}, #{state}, #{zip_code}"
 		end
 		address
 	end
@@ -22,6 +27,8 @@ home.street_1 = "123 Main St."
 home.street_2 = "Apt. F"
 home.city = "Chicago"
 home.state = "IL"
-home.postal_code = "60657"
+home.zip_code = "60657"
 
 puts home.to_s("short")
+puts "\n"
+puts home.to_s("long")
