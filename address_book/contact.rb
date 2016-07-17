@@ -17,6 +17,17 @@ class Contact
 		phone_numbers.push(phone_number)
 	end
 
+	def add_address(kind, street_1, street_2, city, state, zip_code)
+		address = Address.new
+		address.kind = kind
+		address.street_1 = street_1
+		address.street_2 = street_2
+		address.city = city
+		address.state = state
+		address.zip_code = zip_code
+		addresses.push(address)
+	end
+
 	def first_name
 		@first_name
 	end
@@ -73,7 +84,13 @@ class Contact
 	def print_phone_numbers
 		puts "Phone Numbers:"
 		puts "-" * 12
-		phone_numbers.each { |phone_number| puts phone_number}
+		phone_numbers.each { |phone_number| puts phone_number }
+	end
+
+	def print_addresses
+		puts "Address:"
+		puts "-" * 22
+		addresses.each { |address| puts address }
 	end
 end
 
@@ -84,12 +101,16 @@ joy.last_name = "McCaffrey"
 puts joy.to_s("full_name")
 puts joy.to_s("last_first")
 puts joy.to_s("first_last")
-puts joy.add_phone_number("Mobile", "123-456-7890")
-puts joy.add_phone_number("Work", "456-789-0123")
-puts joy.inspect
+puts "\n"
+joy.add_phone_number("Mobile", "313-456-7890")
+joy.add_phone_number("Work", "456-789-0123")
+# puts joy.inspect
 joy.print_phone_numbers
+puts joy.add_address("Home", "123 Main Street", " ", "Chicago", "IL", "60657")
+puts "\n"
+joy.print_addresses
 
-stacey = Contact.new
-stacey.first_name = "Stacey"
-stacey.last_name = "Buras"
-puts stacey.full_name
+# stacey = Contact.new
+# stacey.first_name = "Stacey"
+# stacey.last_name = "Buras"
+# puts stacey.full_name

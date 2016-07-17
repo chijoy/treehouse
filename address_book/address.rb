@@ -21,14 +21,14 @@ class Address
 	end
 end
 
-home = Address.new
-home.kind = "Home"
-home.street_1 = "123 Main St."
-home.street_2 = "Apt. F"
-home.city = "Chicago"
-home.state = "IL"
-home.zip_code = "60657"
+# home = Address.new
+# home.kind = "Home"
+# home.street_1 = "123 Main St."
+# home.street_2 = "Apt. F"
+# home.city = "Chicago"
+# home.state = "IL"
+# home.zip_code = "60657"
 
-puts home.to_s("short")
-puts "\n"
-puts home.to_s("long")
+# puts home.to_s("short")
+# puts "\n"
+# puts home.to_s("long")
