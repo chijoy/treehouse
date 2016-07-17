@@ -13,6 +13,11 @@ class Contact
 		@last_name
 	end
 
+	def first_last
+		first_last = first_name + " " + last_name
+		first_last
+	end
+
 	def full_name
 		full_name = first_name
 		if !middle_name.nil?
@@ -33,14 +38,30 @@ class Contact
 		end
 		last_first
 	end
+
+	def to_s(format = "full_name")
+		case format
+		when "full_name"
+			full_name
+		when "last_first"
+			last_first
+		when "first"
+			first_name
+		when "last"
+			last_name
+		else
+			first_last
+		end
+	end
 end
 
 joy = Contact.new
 joy.first_name = "Joy"
 joy.middle_name = "Anne"
 joy.last_name = "McCaffrey"
-puts joy.full_name
-puts joy.last_first
+puts joy.to_s("full_name")
+puts joy.to_s("last_first")
+puts joy.to_s("first_last")
 
 stacey = Contact.new
 stacey.first_name = "Stacey"
