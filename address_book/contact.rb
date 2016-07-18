@@ -94,21 +94,21 @@ class Contact
 	end
 end
 
-joy = Contact.new
-joy.first_name = "Joy"
-joy.middle_name = "Anne"
-joy.last_name = "McCaffrey"
-puts joy.to_s("full_name")
-puts joy.to_s("last_first")
-puts joy.to_s("first_last")
-puts "\n"
-joy.add_phone_number("Mobile", "313-456-7890")
-joy.add_phone_number("Work", "456-789-0123")
-# puts joy.inspect
-joy.print_phone_numbers
-puts joy.add_address("Home", "123 Main Street", " ", "Chicago", "IL", "60657")
-puts "\n"
-joy.print_addresses
+# joy = Contact.new
+# joy.first_name = "Joy"
+# joy.middle_name = "Anne"
+# joy.last_name = "McCaffrey"
+# puts joy.to_s("full_name")
+# puts joy.to_s("last_first")
+# puts joy.to_s("first_last")
+# puts "\n"
+# joy.add_phone_number("Mobile", "313-456-7890")
+# joy.add_phone_number("Work", "456-789-0123")
+# # puts joy.inspect
+# joy.print_phone_numbers
+# puts joy.add_address("Home", "123 Main Street", " ", "Chicago", "IL", "60657")
+# puts "\n"
+# joy.print_addresses
 
 # stacey = Contact.new
 # stacey.first_name = "Stacey"
