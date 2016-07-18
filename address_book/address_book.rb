@@ -25,12 +25,11 @@ class AddressBook
 		contacts.each do |contact|
 			contact.phone_numbers.each do |phone_number|
 				if phone_number.number.gsub("-", "").include?(search)
-					results.push(contact)
+					results.push(contact) unless results.include?(contact)
 				end
 			end
 		end
 		print_results("Search results by number for (#{search})", results)
-		
 	end
 
 	def print_contact_list
