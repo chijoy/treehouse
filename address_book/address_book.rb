@@ -7,6 +7,37 @@ class AddressBook
 		@contacts = []
 	end
 
+	def run
+		loop do
+			puts "Address Book"
+			puts "a: Add contact"
+			puts "p: Print Address Book"
+			puts "e: Exit"
+			print "Enter your choice: "
+			input = gets.chomp.downcase
+			case input
+			when "a"
+				add_contact
+			when "p"
+				print_contact_list
+			when "e"
+				break
+			end
+		end
+	end
+
+	def add_contact
+		contact = Contact.new
+		print "First name: "
+		contact.first_name = gets.chomp
+		print "Middle name: "
+		contact.middle_name = gets.chomp
+		print "Last name: "
+		contact.last_name = gets.chomp
+		contacts << contact
+	end
+
+
 	def find_by_name(name)
 		results = []
 		search = name.downcase
@@ -65,4 +96,6 @@ class AddressBook
 end
 
 address_book = AddressBook.new
+address_book.run
 
+# address_book.print_contact_list
