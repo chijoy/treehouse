@@ -3,7 +3,7 @@ class BankAccount
 
 	def initialize(name)
 		@name = name
-		@transations = []
+		@transactions = []
 		# add_transaction("Beginning Balance", 0)
 	end
 
@@ -11,13 +11,13 @@ class BankAccount
 		@transactions.push(description: description, amount: amount)
 	end
 
-	# def credit(description, amount)
-	# 	add_transaction(description, amount)
-	# end
+	def credit(description, amount)
+		add_transaction(description, amount)
+	end
 
-	# def debit(description, amount)
-	# 	add_transaction(description, -amount)
-	# end
+	def debit(description, amount)
+		add_transaction(description, -amount)
+	end
 
 end
 
