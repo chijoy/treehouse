@@ -9,7 +9,11 @@ class AddressBook
 		open()
 	end
 
-	# 
+	def open
+		if File.exist?("contacts.yml")
+			@contacts = YAML.load_file("contacts.yml")
+		end
+	end 
 
 	def save
 		File.open("contacts.yml", "w") do |file|
@@ -41,6 +45,7 @@ class AddressBook
 				save()
 				break
 			end
+			puts "\n"
 		end
 	end
 

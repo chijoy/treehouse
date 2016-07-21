@@ -1,0 +1,10 @@
+---
+- !ruby/object:Contact
+  phone_numbers:
+  - !ruby/object:PhoneNumber
+    kind: 773-620-5018
+    number: Home
+  addresses: []
+  first_name: Joy
+  middle_name: Anne
+  last_name: McCaffrey
