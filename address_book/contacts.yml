@@ -8,3 +8,53 @@
   first_name: Joy
   middle_name: Anne
   last_name: McCaffrey
+- !ruby/object:Contact
+  phone_numbers: []
+  addresses: []
+  first_name: Stacey
+  middle_name: ''
+  last_name: Buras
+- !ruby/object:Contact
+  phone_numbers: []
+  addresses: []
+  first_name: Joy
+  middle_name: Anne
+  last_name: McCaffrey
+- !ruby/object:Contact
+  phone_numbers:
+  - !ruby/object:PhoneNumber
+    kind: Home
+    number: 678-555-1212
+  addresses:
+  - !ruby/object:Address
+    kind: Home
+    street_1: 2825 N. Wolcott Ave.
+    street_2: Apt. F
+    city: Chicago
+    state: IL
+    zip_code: '60657'
+  first_name: Courtney
+  middle_name: Louise
+  last_name: Buras
+- !ruby/object:Contact
+  phone_numbers:
+  - !ruby/object:PhoneNumber
+    kind: Home
+    number: 312-555-1212
+  addresses:
+  - !ruby/object:Address
+    kind: Home
+    street_1: 123 Main Street
+    street_2: ''
+    city: Chicago
+    state: IL
+    zip_code: '60657'
+  first_name: Joe
+  middle_name: ''
+  last_name: Schmoe
+- !ruby/object:Contact
+  phone_numbers: []
+  addresses: []
+  first_name: New
+  middle_name: ''
+  last_name: Girl

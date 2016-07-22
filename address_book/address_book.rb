@@ -23,12 +23,14 @@ class AddressBook
 
 	def run
 		loop do
-			puts "Address Book"
-			puts "a: Add contact"
-			puts "p: Print Address Book"
-			puts "s: Search"
-			puts "e: Exit"
-			print "Enter your choice: "
+			puts "\n"
+			puts "Joy's Address Book App:"
+			puts "-" * 23
+			puts "Enter 'a' to Add contact"
+			puts "Enter 'p' to Print address book"
+			puts "Enter 's' to Search"
+			puts "Enter 'e' to Exit"
+			print "Enter your choice now: "
 			input = gets.chomp.downcase
 			case input
 			when "a"
@@ -51,6 +53,7 @@ class AddressBook
 
 	def add_contact
 		contact = Contact.new
+		puts "\n"
 		print "First name: "
 		contact.first_name = gets.chomp
 		print "Middle name: "
@@ -59,22 +62,26 @@ class AddressBook
 		contact.last_name = gets.chomp
 
 		loop do
-			puts "Add phone number or address? "
-			puts "p: Add phone number"
-			puts "a: Add address"
-			puts "(Any other key to go back)"
+			puts "\n"
+			puts "Add a phone number or an address? "
+			puts "Enter 'p' to add a phone number"
+			puts "Enter 'a' to add an address"
+			puts "Enter 'e' to Exit"
+			print "Enter your choice now: "
 			response = gets.chomp.downcase
 			case response
 			when "p"
 				phone = PhoneNumber.new
-				print "Phone number kind (Home, Work, etc): "
+				puts "\n"
+				print "Kind (Home, Work, etc.): "
 				phone.kind = gets.chomp
-				print "Number: "
+				print "Phone number: "
 				phone.number = gets.chomp
 				contact.phone_numbers.push(phone)
 			when "a"
 				address = Address.new
-				print "Address kind (Home, Work, etc): "
+				puts "\n"
+				print "Kind (Home, Work, etc): "
 				address.kind = gets.chomp
 				print "Address line 1: "
 				address.street_1 = gets.chomp
@@ -119,7 +126,7 @@ class AddressBook
 				end
 			end
 		end
-		print_results("Search results by number for (#{search})", results)
+		print_results("Search results by number for (#{search}):", results)
 	end
 
 	def find_by_address(query)
@@ -132,12 +139,12 @@ class AddressBook
 				end
 			end
 		end
-		print_results("Search by address (#{search})", results)
+		print_results("Search results by address for (#{search}):", results)
 	end
 
 	def print_contact_list
+		puts "\n"
 		puts "Contact List:"
-		puts "-" * 22
 		contacts.each do |contact|
 			puts contact.to_s("last_first")
 		end
