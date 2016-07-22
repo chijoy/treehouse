@@ -3,7 +3,7 @@ class Player
 	attr_accessor :name, :score
 
 	def <=>(other_player)
-		socre <=> other_player.score
+		score <=> other_player.score
 	end
 
 	def initialize(name, score)
@@ -13,7 +13,13 @@ class Player
 end
 
 class Game
+	include Enumerable
+
 	attr_accessor :players
+
+	def each(&block)
+		players.each(&block)
+	end
 
 	def initialize
 		@players = []
@@ -46,3 +52,11 @@ game2.add_player(player3)
 game2.add_player(player4)
 
 puts game1.inspect
+
+puts game1.any?{|player| player.score > 80}
+
+players = game1.find_all{|player| player.score > 80}
+puts "Players with a score > 80", players.inspect
+
+players = game1.find{|player| player.score > 80}
+puts "First player with a score > 80", players.inspect
