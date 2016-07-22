@@ -82,13 +82,13 @@ class Contact
 	end
 
 	def print_phone_numbers
-		puts "Phone Numbers:"
+		puts "Phone Numbers: "
 		puts "-" * 12
 		phone_numbers.each { |phone_number| puts phone_number }
 	end
 
 	def print_addresses
-		puts "Address:"
+		puts "Address: "
 		puts "-" * 22
 		addresses.each { |address| puts address }
 	end
