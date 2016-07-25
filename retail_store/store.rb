@@ -1,3 +1,6 @@
+module Inventoryable
+end
+
 class Shirt
 	attr_accessor :attributes
 
@@ -24,3 +27,4 @@ end
 
 shirt1 = Shirt.new(name: "MTF", size: "L")
 shirt2 = Shirt.new(nme: "MTF", size: "M")
+
