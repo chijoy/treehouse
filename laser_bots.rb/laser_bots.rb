@@ -28,5 +28,8 @@ module LaserBots
 	end
 end
 
+# player = Player.new("Jason") # This only works without the modules
 player = LaserBots::World::Player.new("Jason")
 puts player.name
+
+
