@@ -26,8 +26,13 @@ end
 
 customer = Customer.new("Joy", "joy@gmail.com")
 puts customer.inspect
+puts "---"
 puts customer.name_with_email
 customer.each do |attribute|
 	puts attribute
+end
+puts "---"
+customer.each_pair do |type, value|
+	puts "#{type} is #{value}."
 end
 
